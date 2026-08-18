@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08030d">
+<title>DYSTORE — Original Quality Video Lab</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg"></div>
+<header class="nav">
+  <a class="brand" href="#"><span class="dy">DY</span><span>DYSTORE</span></a>
+  <nav><a href="#patch">Patch</a><a href="#inspector">Inspector</a><a href="#history">History</a><a href="#plans">Plans</a></nav>
+  <button id="userBtn" class="userBtn">● dystore</button>
+</header>
+<main>
+<section class="hero">
+ <div class="pill">⚡ DYSTORE VIDEO LAB</div>
+ <h1>Original quality.<br><em>Fast processing.</em></h1>
+ <p>Upload your video, process it locally, then download the patched MP4 without re-encoding the video.</p>
+ <a class="primary" href="#patch">Start Patching</a>
+</section>
+
+<section id="patch" class="section">
+ <div class="heading"><span>01</span><div><small>VIDEO PROCESSOR</small><h2>Original Quality Fast Patch</h2></div></div>
+ <div class="toolCard">
+  <div id="drop" class="drop">
+   <div class="cloud">↥</div>
+   <div class="badges"><span>▣ Original Quality</span><span>⚡ Fast Patch</span><span>⌁ Browser</span></div>
+   <h3>Upload your video</h3>
+   <p>MP4 / MOV · processing stays on your device</p>
+   <label for="file" class="choose">Choose Video</label>
+   <input id="file" type="file" accept=".mp4,.mov,video/mp4,video/quicktime" hidden>
+   <div id="fileName" class="fileName">No video selected</div>
+  </div>
+
+  <div class="modeSingle">
+    <div><b>Original Quality · Fast Patch</b><small>No re-encode · keeps the original video data</small></div>
+    <i>✓</i>
+  </div>
+
+  <div id="queue" class="queue"></div>
+  <div class="progressBox">
+    <div class="progressHead"><span id="status">Waiting for video…</span><b id="percent">0%</b></div>
+    <div class="progress"><i id="bar"></i></div>
+  </div>
+  <button id="process" class="full primary" disabled>SELECT VIDEO FIRST</button>
+  <button id="download" class="full download" hidden>DOWNLOAD RESULT</button>
+  <p class="hint">DYSTORE does not re-encode the video in this mode, so the original video data is preserved. Only MP4 container/sample-table data is processed.</p>
+ </div>
+</section>
+
+<section id="inspector" class="section">
+ <div class="heading"><span>02</span><div><small>VIDEO INSPECTOR</small><h2>File information</h2></div></div>
+ <div class="toolCard"><div class="meta">
+  <div><small>Resolution</small><b id="resolution">—</b></div>
+  <div><small>FPS</small><b id="fps">Auto</b></div>
+  <div><small>Duration</small><b id="duration">—</b></div>
+  <div><small>File size</small><b id="size">—</b></div>
+  <div><small>Format</small><b id="format">—</b></div>
+  <div><small>Output</small><b id="outType">Original quality</b></div>
+ </div></div>
+</section>
+
+<section id="history" class="section">
+ <div class="heading"><span>03</span><div><small>PATCH HISTORY</small><h2>Your recent files</h2></div></div>
+ <div class="toolCard"><div id="historyList" class="empty">No processed videos yet.</div></div>
+</section>
+
+<section id="plans" class="section">
+ <div class="heading"><span>04</span><div><small>SUBSCRIPTIONS</small><h2>DYSTORE plans</h2></div></div>
+ <div class="plans">
+  <article><small>FREE</small><h3>$0</h3><p>3 patches / day</p><button>Current Plan</button></article>
+  <article class="featured"><b class="tag">POPULAR</b><small>PRO</small><h3>$3.99</h3><p>Unlimited patching</p><button>Upgrade</button></article>
+  <article><small>PREMIUM</small><h3>$7.99</h3><p>Unlimited + priority</p><button>Upgrade</button></article>
+  <article><small>MAX</small><h3>$14.99</h3><p>All dystore tools</p><button>Upgrade</button></article>
+ </div>
+</section>
+
+<section class="how"><small>HOW IT WORKS</small><h2>Upload → Process → Download</h2>
+ <div class="steps"><div><b>01</b><span>Upload</span><small>Pick MP4 / MOV</small></div><div><b>02</b><span>Process</span><small>Original-quality patch</small></div><div><b>03</b><span>Download</span><small>Save the result</small></div></div>
+</section>
+</main>
+<footer><b>DYSTORE</b><span>Original-quality video tools</span><a href="#">Terms</a><a href="#">Privacy</a></footer>
+<div id="toast" class="toast"></div>
+<script type="module" src="app.js"></script>
+</body>
+</html>
