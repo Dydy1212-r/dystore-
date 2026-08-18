@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08030d"><title>DYSTORE V10</title>
+<link rel="stylesheet" href="style.css"></head>
+<body>
+<header class="nav"><a class="brand"><b>DY</b><strong>DYSTORE</strong></a><span>V10</span></header>
+<main>
+<section class="hero"><div class="pill">⚡ DYSTORE VIDEO LAB · V10</div>
+<h1>4K60 <em>Quality.</em><br>Mobile + PC.</h1>
+<p>Preserve the original video or create a real HEVC output when a supported local encoder is available.</p></section>
+
+<section class="card">
+<h2>Upload your video</h2>
+<div id="drop" class="drop"><div class="icon">↥</div><b>Choose Video</b><small>MP4 / MOV · processing stays local</small>
+<input id="file" type="file" accept="video/mp4,video/quicktime,.mp4,.mov"><div id="name">No video selected</div></div>
+
+<div class="modes">
+<label><input type="radio" name="mode" value="preserve" checked><b>Preserve Source</b><small>No re-encode · original stream preserved</small></label>
+<label><input type="radio" name="mode" value="hevc"><b>HEVC High-Quality</b><small>Real H.265 encode · 4K60 target when supported</small></label>
+</div>
+
+<div class="info">🎯 Target: <b>3840×2160 · 60 FPS · MP4</b></div>
+<div class="bar"><i id="bar"></i></div><div class="status"><span id="status">Waiting for video…</span><b id="pct">0%</b></div>
+<button id="process" disabled>SELECT VIDEO FIRST</button>
+<button id="download" class="green" hidden>DOWNLOAD RESULT</button>
+<p class="note">HEVC encoding uses a real local encoder. If this browser cannot encode HEVC, V10 will tell you instead of creating a fake HEVC file.</p>
+</section>
+
+<section class="card"><h2>Actual Output</h2><div class="grid">
+<div><small>Resolution</small><b id="res">—</b></div><div><small>FPS</small><b id="fps">—</b></div>
+<div><small>Bitrate</small><b id="bitrate">—</b></div><div><small>File size</small><b id="size">—</b></div>
+<div><small>Format</small><b id="format">—</b></div><div><small>Method</small><b id="method">—</b></div>
+</div><div id="notice" class="notice">Output information will appear here.</div></section>
+</main>
+<footer>DYSTORE V10 · TikTok-ready source preparation</footer>
+<script src="https://cdn.jsdelivr.net/npm/mp4box@0.5.4/dist/mp4box.all.min.js"></script>
+<script type="module" src="app.js"></script>
+</body></html>
