@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08030d">
+<title>DYSTORE V10.02 — Fast Client H.264</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav"><div class="brand"><b>DY</b><strong>DYSTORE</strong><span>V10.02</span></div></header>
+<main>
+<section class="hero">
+<div class="pill">⚡ FAST CLIENT-SIDE · H.264 4K60</div>
+<h1>Encode on<br><em>your device.</em></h1>
+<p>No video upload to a processing server. Uses browser-native WebCodecs when available, with a local fallback.</p>
+</section>
+
+<section class="card">
+<h2>Upload video</h2>
+<div id="drop" class="drop">
+  <div class="icon">↥</div><b>Choose Video</b>
+  <small>MP4 / MOV · local processing</small>
+  <input id="file" type="file" accept="video/mp4,video/quicktime,.mp4,.mov">
+  <div id="name">No video selected</div>
+</div>
+
+<div class="modes">
+<label><input type="radio" name="mode" value="preserve" checked>
+<b>Preserve Source</b><small>No video re-encode · fastest</small></label>
+<label><input type="radio" name="mode" value="client" >
+<b>Fast Client H.264</b><small>Native encoder · 4K60 · ~57.3 Mbps</small></label>
+</div>
+
+<div class="target">
+<b>V10.02 target</b>
+<span>3840×2160 · 60 FPS · H.264 High · avc1.640034 · ~57.3 Mbps · keyframe 2s · MP4 Fast Start</span>
+</div>
+
+<div class="engine" id="engine">Encoder: not checked</div>
+<div class="status"><span id="status">Waiting for video…</span><b id="pct">0%</b></div>
+<div class="bar"><i id="bar"></i></div>
+<button id="process" disabled>SELECT VIDEO FIRST</button>
+<button id="download" class="green" hidden>DOWNLOAD RESULT</button>
+<p class="note">Client mode asks the browser for hardware acceleration. Browser/device support varies; the page verifies support before encoding. TikTok may still transcode after upload.</p>
+</section>
+
+<section class="card">
+<h2>Actual output</h2>
+<div class="grid">
+<div><small>Resolution</small><b id="res">—</b></div>
+<div><small>FPS</small><b id="fps">—</b></div>
+<div><small>Bitrate</small><b id="bitrate">—</b></div>
+<div><small>File size</small><b id="size">—</b></div>
+<div><small>Codec</small><b id="codec">—</b></div>
+<div><small>Mode</small><b id="profile">—</b></div>
+</div>
+<div class="notice" id="notice">Process a video to inspect the actual output.</div>
+</section>
+</main>
+<footer>DYSTORE V10.02 · client-side H.264 hardware-first</footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>
