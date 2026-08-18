@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#08030d">
+<title>DYSTORE V7 — Original Quality</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg"></div>
+
+<header class="nav">
+  <a class="brand" href="#top"><span class="dy">DY</span><span>DYSTORE</span></a>
+  <nav><a href="#patch">Patch</a><a href="#output">Output</a><a href="#history">History</a></nav>
+  <button id="userBtn" class="userBtn">● dystore</button>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="pill">⚡ DYSTORE VIDEO LAB · V7</div>
+  <h1>Original stream.<br><em>Clean output.</em></h1>
+  <p>Browser-only MP4 normalization with no video re-encode. Output statistics are measured from the processed file itself.</p>
+  <a class="primary heroButton" href="#patch">Start Patching</a>
+</section>
+
+<section id="patch" class="section">
+  <div class="heading"><span>01</span><div><small>VIDEO PROCESSOR</small><h2>Upload your video</h2></div></div>
+
+  <div class="toolCard">
+    <div id="drop" class="drop">
+      <div class="cloud">↥</div>
+      <h3>Upload your video</h3>
+      <p>MP4 / MOV · processed locally in your browser</p>
+      <label class="choose" for="file">Choose Video</label>
+      <input id="file" type="file" accept=".mp4,.mov,video/mp4,video/quicktime">
+      <div id="fileName" class="fileName">No video selected</div>
+    </div>
+
+    <div class="featureRow"><div><b>Original video stream</b><small>No H.264/HEVC re-encode</small></div><span>✓</span></div>
+    <div class="featureRow"><div><b>Source resolution preserved</b><small>No forced 720p / 1080p resize</small></div><span>✓</span></div>
+    <div class="featureRow"><div><b>Source timing preserved</b><small>No 10× sample inflation</small></div><span>✓</span></div>
+
+    <div id="queue" class="queue"></div>
+
+    <div class="progressBox">
+      <div class="progressHead"><span id="status">Waiting for video…</span><b id="percent">0%</b></div>
+      <div class="progress"><i id="bar"></i></div>
+    </div>
+
+    <button id="process" class="full primary" disabled>SELECT VIDEO FIRST</button>
+    <button id="download" class="full download" hidden>DOWNLOAD PROCESSED VIDEO</button>
+    <p class="hint">V7 does not re-encode the video. TikTok may still transcode the file after upload.</p>
+  </div>
+</section>
+
+<section id="output" class="section">
+  <div class="heading"><span>02</span><div><small>OUTPUT</small><h2>Actual processed file</h2></div></div>
+  <div class="toolCard">
+    <div class="outputGrid">
+      <div class="outputItem"><small>Resolution</small><strong id="outResolution">—</strong></div>
+      <div class="outputItem"><small>FPS</small><strong id="outFPS">—</strong></div>
+      <div class="outputItem"><small>Bitrate</small><strong id="outBitrate">—</strong><em id="bitrateNote">Measured from output</em></div>
+      <div class="outputItem"><small>File size</small><strong id="outFileSize">—</strong></div>
+      <div class="outputItem"><small>Format</small><strong id="outFormat">—</strong></div>
+      <div class="outputItem"><small>Method</small><strong id="outMethod">—</strong></div>
+    </div>
+    <div id="outputNotice" class="outputNotice">No processed output yet.</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="heading"><span>03</span><div><small>TECHNICAL</small><h2>Output details</h2></div></div>
+  <div class="toolCard">
+    <div class="meta">
+      <div><small>Video codec</small><b id="outCodec">—</b></div>
+      <div><small>Duration</small><b id="outDuration">—</b></div>
+      <div><small>Audio</small><b id="outAudio">—</b></div>
+      <div><small>Video samples</small><b id="outSamples">—</b></div>
+      <div><small>Container</small><b id="outContainer">—</b></div>
+      <div><small>Integrity</small><b id="outIntegrity">—</b></div>
+    </div>
+  </div>
+</section>
+
+<section id="history" class="section">
+  <div class="heading"><span>04</span><div><small>HISTORY</small><h2>Recent results</h2></div></div>
+  <div class="toolCard"><div id="historyList" class="empty">No processed videos yet.</div></div>
+</section>
+
+<section class="how">
+  <small>HOW IT WORKS</small>
+  <h2>Upload → Normalize → Download</h2>
+  <div class="steps">
+    <div><b>01</b><span>Upload</span><small>Choose your source MP4/MOV</small></div>
+    <div><b>02</b><span>Process</span><small>Normalize container without video re-encode</small></div>
+    <div><b>03</b><span>Verify</span><small>Read the real processed output</small></div>
+  </div>
+</section>
+</main>
+
+<footer><b>DYSTORE</b><span>Private video tools</span><a href="#">Terms</a><a href="#">Privacy</a></footer>
+<div id="toast" class="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/mp4box@0.5.4/dist/mp4box.all.min.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>
