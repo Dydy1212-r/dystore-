@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#09040f">
+  <title>DYSTORE — Video Tools</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg"></div>
+
+<header class="nav">
+  <a class="brand" href="#home"><span class="dy">DY</span><span>DYSTORE</span></a>
+  <nav>
+    <a href="#patch">Patch</a>
+    <a href="#inspector">Inspector</a>
+    <a href="#history">History</a>
+    <a href="#plans">Plans</a>
+  </nav>
+  <button class="userBtn" id="userBtn"><span>●</span> dystore</button>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="pill">⚡ DYSTORE VIDEO LAB</div>
+    <h1>Professional video tools.<br><em>Built for creators.</em></h1>
+    <p>Patch, inspect and manage your videos from one fast mobile-friendly dashboard.</p>
+    <div class="heroBtns">
+      <a class="primary" href="#patch">Start Patching</a>
+      <a class="secondary" href="#inspector">Video Inspector</a>
+    </div>
+  </section>
+
+  <section class="dashboard">
+    <div class="dashTop">
+      <div><small>ACCOUNT</small><h2>Welcome to dystore</h2></div>
+      <div class="plan">FREE <b id="usage">3/3</b></div>
+    </div>
+    <div class="stats">
+      <div><span>Daily patches</span><strong id="patchCount">3</strong></div>
+      <div><span>Plan</span><strong>FREE</strong></div>
+      <div><span>Status</span><strong class="online">● Active</strong></div>
+    </div>
+  </section>
+
+  <section id="patch" class="section">
+    <div class="heading"><span>01</span><div><small>VIDEO PATCHER</small><h2>Patch your video</h2></div></div>
+    <div class="toolCard">
+      <div class="drop" id="drop">
+        <div class="cloud">↥</div>
+        <h3>Drop video here</h3>
+        <p>or choose an MP4 / MOV file from your device</p>
+        <label class="choose" for="file">Choose Video</label>
+        <input id="file" type="file" accept=".mp4,.mov,video/mp4,video/quicktime">
+        <div id="fileName" class="fileName">No file selected</div>
+      </div>
+      <div class="options">
+        <label><span>Original Quality</span><input type="checkbox" checked></label>
+        <label><span>Fast Patch</span><input type="checkbox" checked></label>
+        <label><span>Local Processing</span><input type="checkbox" checked></label>
+      </div>
+      <button id="patch" class="full primary" disabled>SELECT VIDEO FIRST</button>
+      <div id="progress" class="progress"><i></i></div>
+      <p class="hint">Video bytes stay in your browser unless you connect your own server/API.</p>
+    </div>
+  </section>
+
+  <section id="inspector" class="section">
+    <div class="heading"><span>02</span><div><small>TIKTOK VIDEO INSPECTOR</small><h2>Inspect video details</h2></div></div>
+    <div class="toolCard">
+      <div class="urlRow">
+        <input id="tiktokUrl" placeholder="Paste TikTok URL (optional)">
+        <button id="inspect">Inspect</button>
+      </div>
+      <div id="meta" class="meta">
+        <div><small>Resolution</small><b id="resolution">—</b></div>
+        <div><small>FPS</small><b id="fps">—</b></div>
+        <div><small>Duration</small><b id="duration">—</b></div>
+        <div><small>File size</small><b id="size">—</b></div>
+        <div><small>Format</small><b id="format">—</b></div>
+        <div><small>Method</small><b>Browser</b></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="history" class="section">
+    <div class="heading"><span>03</span><div><small>PATCH HISTORY</small><h2>Your recent files</h2></div></div>
+    <div class="toolCard">
+      <div id="historyList" class="empty">No patch history yet.</div>
+    </div>
+  </section>
+
+  <section id="plans" class="section">
+    <div class="heading"><span>04</span><div><small>SUBSCRIPTIONS</small><h2>Choose your plan</h2></div></div>
+    <div class="plans">
+      <article><small>FREE</small><h3>$0</h3><p>3 patches / day</p><button>Current Plan</button></article>
+      <article class="featured"><b class="tag">POPULAR</b><small>PRO</small><h3>$3.99</h3><p>Unlimited patching</p><button>Upgrade</button></article>
+      <article><small>PREMIUM</small><h3>$7.99</h3><p>Unlimited + priority</p><button>Upgrade</button></article>
+      <article><small>MAX</small><h3>$14.99</h3><p>All dystore tools</p><button>Upgrade</button></article>
+    </div>
+  </section>
+
+  <section class="how">
+    <div><small>HOW IT WORKS</small><h2>Simple. Fast. Private.</h2></div>
+    <div class="steps"><div><b>01</b><span>Upload</span><small>Choose your video</small></div><div><b>02</b><span>Process</span><small>Run your tool locally</small></div><div><b>03</b><span>Download</span><small>Save your result</small></div></div>
+  </section>
+</main>
+
+<footer><b>DYSTORE</b><span>Video tools for creators</span><a href="#">Terms</a><a href="#">Privacy</a></footer>
+<div id="toast" class="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
