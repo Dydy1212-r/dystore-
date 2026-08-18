@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08030d"><title>DYSTORE V9 — TikTok Ready</title>
+<link rel="stylesheet" href="style.css"></head>
+<body><div class="bg"></div>
+<header class="nav"><a class="brand" href="#"><span class="dy">DY</span><span>DYSTORE</span></a>
+<nav><a href="#patch">Patch</a><a href="#output">Output</a></nav><button class="userBtn">● dystore</button></header>
+<main>
+<section class="hero"><div class="pill">⚡ DYSTORE VIDEO LAB · V9</div>
+<h1>Prepare. Process.<br><em>Upload.</em></h1>
+<p>Prepare a high-quality source for TikTok while measuring the actual processed file.</p>
+<a class="primary" href="#patch">Start Patching</a></section>
+
+<section id="patch" class="section"><div class="heading"><span>01</span><div><small>VIDEO PROCESSOR</small><h2>Upload your video</h2></div></div>
+<div class="toolCard">
+<div id="drop" class="drop"><div class="cloud">↥</div><h3>Upload your video</h3>
+<p>MP4 / MOV · browser processing</p><label class="choose" for="file">Choose Video</label>
+<input id="file" type="file" accept=".mp4,.mov,video/mp4,video/quicktime">
+<div id="fileName" class="fileName">No video selected</div></div>
+<div id="queue" class="queue"></div>
+<div class="preset"><b>TikTok-ready target</b><span>4K · 60 FPS · MP4 · HEVC when a real encoder is available</span></div>
+<div class="modeRow">
+<label><input type="radio" name="mode" value="preserve" checked> Preserve source</label>
+<label><input type="radio" name="mode" value="hevc"> HEVC high-quality</label>
+</div>
+<div class="featureRow"><div><b>No fake codec metadata</b><small>HEVC mode only works with a real encoder</small></div><span>✓</span></div>
+<div class="featureRow"><div><b>No 600 FPS inflation</b><small>Source timing is not multiplied</small></div><span>✓</span></div>
+<div class="progressBox"><div class="progressHead"><span id="status">Waiting for video…</span><b id="percent">0%</b></div><div class="progress"><i id="bar"></i></div></div>
+<button id="process" class="full primary" disabled>SELECT VIDEO FIRST</button>
+<button id="download" class="full download" hidden>DOWNLOAD PROCESSED VIDEO</button>
+<p class="hint">TikTok may still transcode the uploaded file. V9 does not claim to bypass TikTok processing.</p>
+</div></section>
+
+<section id="output" class="section"><div class="heading"><span>02</span><div><small>OUTPUT</small><h2>Actual processed file</h2></div></div>
+<div class="toolCard"><div class="outputGrid">
+<div class="outputItem"><small>Resolution</small><strong id="outResolution">—</strong></div>
+<div class="outputItem"><small>FPS</small><strong id="outFPS">—</strong></div>
+<div class="outputItem"><small>Bitrate</small><strong id="outBitrate">—</strong><em id="bitrateNote">Actual output</em></div>
+<div class="outputItem"><small>File size</small><strong id="outFileSize">—</strong></div>
+<div class="outputItem"><small>Format</small><strong id="outFormat">—</strong></div>
+<div class="outputItem"><small>Method</small><strong id="outMethod">—</strong></div>
+</div><div id="outputNotice" class="outputNotice">Process a video to inspect the real output.</div></div></section>
+
+<section class="section"><div class="heading"><span>03</span><div><small>TECHNICAL</small><h2>Details</h2></div></div>
+<div class="toolCard"><div class="meta">
+<div><small>Codec</small><b id="outCodec">—</b></div><div><small>Duration</small><b id="outDuration">—</b></div>
+<div><small>Audio</small><b id="outAudio">—</b></div><div><small>Samples</small><b id="outSamples">—</b></div>
+<div><small>Container</small><b id="outContainer">—</b></div><div><small>Integrity</small><b id="outIntegrity">—</b></div>
+</div></div></section>
+</main><footer><b>DYSTORE</b><span>TikTok-ready source preparation</span></footer>
+<div id="toast" class="toast"></div>
+<script src="https://cdn.jsdelivr.net/npm/mp4box@0.5.4/dist/mp4box.all.min.js"></script>
+<script type="module" src="app.js"></script></body></html>
